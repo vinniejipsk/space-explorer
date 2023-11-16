@@ -7,10 +7,17 @@
 
 .navigation {
   display: flex;
+  justify-content: center;
   gap: 100px;
   border: 5px solid lightblue;
   border-radius: 15px;
   padding-block: 10px;
   padding-inline: 100px;
   margin: 10px;
+}
+
+.apodImage {
+  width: 640px;
+  height: auto;
+  max-width: 100%;
 }
