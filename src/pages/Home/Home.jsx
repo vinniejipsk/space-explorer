@@ -33,10 +33,11 @@ function Home() {
   return (
     <>
       <Navigation />
-      <h1>Welcome Spacer</h1>
-      <div>Search for you favourite Exoplanets!</div>
-
-      <SearchBar setWorldSearch={setWorldSearch} />
+      <h1>Welcome Space Explorer</h1>
+      <div className="header-title">Search for your favourite space images!</div>
+      <div className="search-bar">
+        <SearchBar setWorldSearch={setWorldSearch} />
+      </div>
       {worldSearch && worldData ? <WorldList worldData={worldData} /> : null}
     </>
   );

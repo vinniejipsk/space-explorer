@@ -25,6 +25,7 @@ function SearchBar(props) {
             type="text"
             placeholder="Type here!"
             onChange={handleChange}
+            className="search-input"
           />
           <button type="submit">Search</button>
       </form>

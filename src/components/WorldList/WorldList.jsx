@@ -4,7 +4,7 @@ import WorldListItem from '../WorldListItem/WorldListItem';
 function WorldList({ worldData }) {
 
     return (
-        <ul className="worldList">
+        <div className="worldList">
             {worldData.collection.items.map((item, index) => (
                 <WorldListItem 
                     key={index} 
@@ -12,7 +12,7 @@ function WorldList({ worldData }) {
                     title={item.data[0].title} 
                 />
             ))}
-        </ul>
+        </div>
     );
 }
 
