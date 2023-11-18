@@ -38,6 +38,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+.search-button {
+    height: 26px;
+    width: 10%;
+}
+
 .search-input {
     height: 20px;
     width: 35%;

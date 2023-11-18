@@ -5,6 +5,8 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import WorldList from '../../components/WorldList/WorldList';
 
 import './Home.css';
+import FavouritesList from '../../components/FavouritesList/FavouritesList';
+import ResultSummary from '../../components/ResultSummary/ResultSummary';
 
 function Home() {
 
@@ -33,12 +35,14 @@ function Home() {
   return (
     <>
       <Navigation />
+      <FavouritesList />
       <h1>Welcome Space Explorer</h1>
       <div className="header-title">Search for your favourite space images!</div>
       <div className="search-bar">
         <SearchBar setWorldSearch={setWorldSearch} />
       </div>
       {worldSearch && worldData ? <WorldList worldData={worldData} /> : null}
+      <ResultSummary />
     </>
   );
 }

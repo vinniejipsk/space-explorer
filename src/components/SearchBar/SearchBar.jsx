@@ -27,7 +27,12 @@ function SearchBar(props) {
             onChange={handleChange}
             className="search-input"
           />
-          <button type="submit">Search</button>
+          <button 
+            type="submit"
+            className="search-button"
+          >
+            Search
+          </button>
       </form>
     </>
   );
