@@ -8,8 +8,8 @@
 }
 
 .apodImage {
-    width: 50%;
-    max-width: 600px;
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 20px;
 }
 
