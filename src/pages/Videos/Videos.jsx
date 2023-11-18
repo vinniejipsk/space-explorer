@@ -9,18 +9,15 @@ function Videos() {
 
     const [videos, setVideos] = useState([]);
 
+    async function VideosApiCall() {
+      
+        const response = await fetch('https://images-api.nasa.gov/search?media_type=video');
+        const data = await response.json();
+        setVideos(data.collection.items);
+    }
+    
     useEffect(() => {
-
-      fetch('https://images-api.nasa.gov/search?media_type=video')
-
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => setVideos(data.collection.items))
-        .catch(error => console.error('Error fetching data:', error));
+      VideosApiCall();
     }, []);
 
       return (
@@ -32,8 +29,8 @@ function Videos() {
             {videos.map((video, index) => (
               <div className="video-item" key={index}>
                 <VideoItem
-                  title={video.data[0].title}
-                  thumbnailUrl={video.links ? video.links[0].href : null}
+                  // title={video.data[0].title}
+                  thumbnailUrl={video.links[0].href}
                 />
               </div>
             ))}

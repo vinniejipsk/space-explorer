@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import Navigation from '../../components/Navigation/Navigation'
 
+import './Apod.css'
+
 function Apod() {
 
     const [apodData, setApodData] = useState({});
@@ -13,24 +15,27 @@ function Apod() {
         
         // const apodUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
-        const makeApiCall = async () => {
+        const ApodApiCall = async () => {
           const res = await fetch(apodUrl);
           const jsonData = await res.json();
         //   console.log(jsonData);
         setApodData(jsonData);
         };
       
-        makeApiCall();
+        ApodApiCall();
       }, []);
 
       return (
         <>
             <Navigation />
+
             {apodData && (
-                <div>
-                    <h1>{apodData.title}</h1>
-                    <img src={apodData.url} className="apodImage" />
-                    <p>{apodData.explanation}</p>
+                <div className="apod-container">
+                    <img src={apodData.url} className="apodImage" alt={apodData.title} />
+                    <div className="apodText">
+                        <h1>{apodData.title}</h1>
+                        <p>{apodData.explanation}</p>
+                    </div>
                 </div>
             )}
         </>
