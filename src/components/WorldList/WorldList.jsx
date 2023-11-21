@@ -1,7 +1,7 @@
 import React from 'react';
 import WorldListItem from '../WorldListItem/WorldListItem';
 
-function WorldList({ worldData }) {
+function WorldList({ worldData, onItemSelect }) {
 
     return (
         <div className="worldList">
@@ -10,6 +10,7 @@ function WorldList({ worldData }) {
                     key={index} 
                     url={item.links[0].href} 
                     title={item.data[0].title} 
+                    handleItemClick={() => onItemSelect(item)}
                 />
             ))}
         </div>
