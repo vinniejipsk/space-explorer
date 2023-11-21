@@ -17,9 +17,9 @@
     margin-bottom: 20px;
 }
 
-/* .favourites-list-container {
+.favourites-list-container {
     grid-area: fav;
-} */
+}
 
 .search-and-list-container {
     grid-area: search;

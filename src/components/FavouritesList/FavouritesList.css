@@ -16,9 +16,12 @@
     font-size: 10px;
   }
   
-
   .fav-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .delete-button {
+    max-width: 70px;
   }
