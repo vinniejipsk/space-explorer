@@ -5,6 +5,7 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import WorldList from '../../components/WorldList/WorldList';
 import FavouritesList from '../../components/FavouritesList/FavouritesList';
 import ResultSummary from '../../components/ResultSummary/ResultSummary';
+import FavouriteComment from '../../components/FavouriteComment/FavouriteComment';
 
 import './Home.css';
 
@@ -14,7 +15,7 @@ function Home() {
   const [worldData, setWorldData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [favSpaceData, setFavSpaceData] = useState([]);
-
+  const [comment, setComment] = useState('');
 
   const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN;
   const BASE_URL = "https://api.airtable.com/v0/appFFEGBwUf8bQvIk"
@@ -75,13 +76,23 @@ function Home() {
     postToFavorites(newFavItem);
   };
 
+  const deleteFromFavorites = async (id) => {
+    await fetch(`${BASE_URL}/favSpaceAT/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+    setFavSpaceData(favSpaceData.filter(item => item.id !== id));
+  };
+
   return (
     <div className="main-container">
       <div className="navigation-container">
         <Navigation />
       </div>
       <div className="favourites-list-container">
-        <FavouritesList favSpaceData={favSpaceData} />
+        <FavouritesList favSpaceData={favSpaceData} onItemDelete={deleteFromFavorites} />
       </div>
       <div className="search-and-list-container">
         <h1>Welcome Space Explorer</h1>
@@ -92,7 +103,8 @@ function Home() {
         {worldSearch && worldData ? <WorldList worldData={worldData} onItemSelect={handleItemClick} /> : null}
       </div>
       <div className="result-summary-container">
-        <ResultSummary selectedItem={selectedItem} addToFavorites={addToFavorites} />
+        <ResultSummary selectedItem={selectedItem} addToFavorites={addToFavorites} comment={comment} />
+        {selectedItem && <FavouriteComment setComment={setComment} />}
       </div>
     </div>
   );
