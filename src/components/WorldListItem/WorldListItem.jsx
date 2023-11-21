@@ -1,8 +1,8 @@
-function WorldListItem({ url, title }) {
+function WorldListItem({ url, title, handleItemClick }) {
     
     return (
       <>
-        <div className="worldListItem">
+        <div className="worldListItem" onClick={handleItemClick}>
             <img src={url} alt={title} />
             <p>{title}</p>
         </div>
