@@ -4,16 +4,20 @@ function SearchBar(props) {
 
   const [searchInput, setSearchInput] = useState("");
 
+  const keywords = ["Earth Planet", "Mars Planet", "Venus Planet", "Exoplanets", "Galaxy"];
+
   function handleChange(e) {
     setSearchInput(e.target.value);
   }
 
+  function handleKeywordClick(keyword) {
+    setSearchInput(keyword);
+    props.setWorldSearch(keyword);
+  }
+
   function searchSubmit(e) {
-    
     e.preventDefault();
-
     props.setWorldSearch(searchInput);
-
     setSearchInput("");
   }
 
@@ -34,6 +38,13 @@ function SearchBar(props) {
             Search
           </button>
       </form>
+      <div className="keyword-buttons">
+        {keywords.map((keyword, index) => (
+          <button key={index} onClick={() => handleKeywordClick(keyword)} >
+            {keyword}
+          </button>
+        ))}
+      </div>
     </>
   );
 }
