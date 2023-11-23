@@ -81,14 +81,21 @@ h1 {
 
 .search-bar {
     margin-bottom: 20px;
+    width: 750px;
 }
 
 .search-button {
     height: 26px;
-    width: 10%;
+    width: 75px;
 }
 
 .search-input {
     height: 20px;
     width: 35%;
+}
+
+.space-object {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
