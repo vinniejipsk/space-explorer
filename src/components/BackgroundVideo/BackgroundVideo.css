@@ -5,6 +5,5 @@
     min-Width: 100%; 
     min-height: 100%;
     z-index: -1; 
-    transform: translateX(20%);
-    transform: translateY(20%);
+    transform: translateX(0%) translateY(20%) scale(110%);
 }
