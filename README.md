@@ -8,16 +8,13 @@ It is the easiest way to find which type of space objects for a user to look for
 
 # Technology Used and Referenced With
 
-React
-CSS
-Bruno
-Postman (NASA Provided)
-Github
-Vercel
+React, CSS, Bruno, Postman (NASA Provided), Github, Vercel
 
 # APIs Used
 
-NASA Open API:
+NASA Open APIs:
+  - NASA APOD API
+  - NASA NASA Image and Video Library API
 https://api.nasa.gov/
 
 # Wireframes
@@ -113,6 +110,11 @@ Of course is the Astronomy of the Day API!
   
 # What should I have achieve more?
 
-1. Able to drag and drop the favourite items in the list.
-2. Able to click on a favourite item to check on the summary. 
-3. Think of more interactive ways for users to click and implement it.
+1. Debug more errors/problems. (Need to delete twice for an item and etc.)
+2. Able to drag and drop the favourite items in the list.
+3. Able to click on a favourite item to check on the summary. 
+4. Think of more interactive ways for users to click and implement it. (Sliders? A Calendar to help users to mark?)
+
+# Q&A
+
+Ask me anything! Thanks everyone for browsing through my personal website.
