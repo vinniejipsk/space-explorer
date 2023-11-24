@@ -3,7 +3,7 @@ import FavouritesListItem from "../FavouriteListItem/FavouriteListItem";
 
 import './FavouritesList.css'
 
-function FavouritesList({ favSpaceData, onItemDelete }) {
+function FavouritesList({ favSpaceData, onItemDelete, onUpdate }) {
 
     return (
       <>
@@ -15,6 +15,7 @@ function FavouritesList({ favSpaceData, onItemDelete }) {
               image={item.image} 
               comment={item.comment} 
               onDelete={() => onItemDelete(item.id)}
+              onUpdate={(newComment) => onUpdate(item.id, newComment)}
             />
           ))}
         </div>

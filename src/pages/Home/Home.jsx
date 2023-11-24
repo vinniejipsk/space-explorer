@@ -88,6 +88,18 @@ function Home() {
     setFavSpaceData(favSpaceData.filter(item => item.id !== id));
   };
 
+  const updateCommentInFavorites = async (id, newComment) => {
+    await fetch(`${BASE_URL}/favSpaceAT/${id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN}`,
+      },
+      body: JSON.stringify({ fields: { comment: newComment } })
+    });
+    setFavSpaceData(favSpaceData.map(item => item.id === id ? { ...item, comment: newComment } : item));
+  };
+
   return (
     
     <div className="main-container">
@@ -96,7 +108,11 @@ function Home() {
         <Navigation />
       </div>
       <div>
-        <FavouritesList favSpaceData={favSpaceData} onItemDelete={deleteFromFavorites} />
+        <FavouritesList 
+        favSpaceData={favSpaceData} 
+        onItemDelete={deleteFromFavorites}
+        onUpdate={updateCommentInFavorites} 
+      />
       </div>
       <div className="search-results-container">
         <h1>Welcome Space Explorer</h1>
