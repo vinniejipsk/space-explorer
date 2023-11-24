@@ -7,6 +7,9 @@ import FavouritesList from '../../components/FavouritesList/FavouritesList';
 import ResultSummary from '../../components/ResultSummary/ResultSummary';
 import FavouriteComment from '../../components/FavouriteComment/FavouriteComment';
 
+import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
+import myVideo from '../../assets/background_video/earth.mp4';
+
 import './Home.css';
 
 function Home() {
@@ -54,7 +57,6 @@ function Home() {
         ...data.fields,
         id: data.id,
       }));
-      console.log(spaceData);
       setFavSpaceData(spaceData);
     }
     fetchFavSpaces();
@@ -87,7 +89,9 @@ function Home() {
   };
 
   return (
+    
     <div className="main-container">
+      <BackgroundVideo src={myVideo} />
       <div className="navigation-container">
         <Navigation />
       </div>
@@ -107,6 +111,7 @@ function Home() {
         {selectedItem && <FavouriteComment setComment={setComment} />}
       </div>
     </div>
+
   );
 }
 
