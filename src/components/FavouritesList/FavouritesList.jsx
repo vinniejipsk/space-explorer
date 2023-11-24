@@ -7,7 +7,7 @@ function FavouritesList({ favSpaceData, onItemDelete }) {
 
     return (
       <>
-        <div>
+        <div className="favourite-container">
           {favSpaceData.map((item, index) => (
             <FavouritesListItem 
               key={index} 

@@ -54,7 +54,7 @@ function SearchBar(props) {
         />
         <button type="submit" className="search-button">Search</button>
       </form>
-      <div>
+      <div className="search-sort-container">
         <label>
           <input 
             type="radio" 
@@ -62,6 +62,7 @@ function SearchBar(props) {
             value="default" 
             checked={sortType === 'default'}
             onChange={handleSortChange}
+            className="sort-radio-each"
           />
           Default
         </label>
@@ -72,6 +73,7 @@ function SearchBar(props) {
             value="closest" 
             checked={sortType === 'closest'}
             onChange={handleSortChange}
+            className="sort-radio-each"
           />
           Closest to Earth
         </label>
@@ -82,6 +84,7 @@ function SearchBar(props) {
             value="furthest" 
             checked={sortType === 'furthest'}
             onChange={handleSortChange}
+            className="sort-radio-each"
           />
           Furthest from Earth
         </label>
@@ -92,6 +95,7 @@ function SearchBar(props) {
             value="smallest" 
             checked={sortType === 'smallest'}
             onChange={handleSortChange}
+            className="sort-radio-each"
           />
           Smallest Size
         </label>
@@ -102,13 +106,17 @@ function SearchBar(props) {
             value="biggest" 
             checked={sortType === 'biggest'}
             onChange={handleSortChange}
+            className="sort-radio-each"
           />
           Largest Size
         </label>
       </div>
       <div>
         {sortedData.map(celestial => (
-          <button key={celestial.name} onClick={() => handleCelestialClick(celestial.name)}>
+          <button 
+            key={celestial.name} onClick={() => handleCelestialClick(celestial.name)}
+            className='sort-celestial-buttons'
+          >
             {celestial.name}
           </button>
         ))}

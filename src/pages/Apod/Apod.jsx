@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Navigation from '../../components/Navigation/Navigation'
 
 import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
-import myVideo from '../../assets/background_video/earth.mp4';
+import myBgVideo from '../../assets/background_video/earth.mp4';
 
 import './Apod.css'
 
@@ -15,14 +15,11 @@ function Apod() {
 
         const apikey= 'LB2QtQMewzzjzfoCOM8488BPyd0FXGu3Xx6txVZO';
         const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apikey}`;
-        
-        // const apodUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
         const ApodApiCall = async () => {
-          const res = await fetch(apodUrl);
-          const jsonData = await res.json();
-        //   console.log(jsonData);
-        setApodData(jsonData);
+            const res = await fetch(apodUrl);
+            const jsonData = await res.json();
+            setApodData(jsonData);
         };
       
         ApodApiCall();
@@ -30,9 +27,8 @@ function Apod() {
 
       return (
         <>
-            <BackgroundVideo src={myVideo} />
+            <BackgroundVideo src={myBgVideo} />
             <Navigation />
-
             {apodData && (
                 <div className="apod-container">
                     <img src={apodData.url} className="apodImage" alt={apodData.title} />

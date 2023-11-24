@@ -8,7 +8,7 @@ import ResultSummary from '../../components/ResultSummary/ResultSummary';
 import FavouriteComment from '../../components/FavouriteComment/FavouriteComment';
 
 import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
-import myVideo from '../../assets/background_video/earth.mp4';
+import myBgVideo from '../../assets/background_video/earth.mp4';
 
 import './Home.css';
 
@@ -91,14 +91,14 @@ function Home() {
   return (
     
     <div className="main-container">
-      <BackgroundVideo src={myVideo} />
+      <BackgroundVideo src={myBgVideo} />
       <div className="navigation-container">
         <Navigation />
       </div>
-      <div className="favourites-list-container">
+      <div>
         <FavouritesList favSpaceData={favSpaceData} onItemDelete={deleteFromFavorites} />
       </div>
-      <div className="search-and-list-container">
+      <div className="search-results-container">
         <h1>Welcome Space Explorer</h1>
         <div className="header-title">Search for your favourite space images!</div>
         <div className="search-bar">
@@ -108,7 +108,9 @@ function Home() {
       </div>
       <div className="result-summary-container">
         <ResultSummary selectedItem={selectedItem} addToFavorites={addToFavorites} comment={comment} />
-        {selectedItem && <FavouriteComment setComment={setComment} />}
+        <div className="comment-container">
+          {selectedItem && <FavouriteComment setComment={setComment} />}
+        </div>
       </div>
     </div>
 
