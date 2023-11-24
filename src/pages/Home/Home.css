@@ -121,6 +121,13 @@
 
 .favorite-button {
     margin-top: 10px;
+    border-radius: 5px;
+    border-style: none;
+    padding-block: 5px;
+    padding-inline: 7px;
+    background-color: rgba(153, 153, 0, 0.5);
+    color: rgb(255, 255, 112);
+    cursor: pointer;
 }
 
 @media (max-width: 900px) {
