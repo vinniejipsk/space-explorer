@@ -15,7 +15,7 @@ React, CSS, Bruno, Postman (NASA Provided), Github, Vercel
 NASA Open APIs:
   - NASA APOD API
   - NASA NASA Image and Video Library API
-https://api.nasa.gov/
+  - https://api.nasa.gov/
 
 # Wireframes
 
@@ -112,8 +112,9 @@ Of course is the Astronomy of the Day API!
 
 1. Debug more errors/problems. (Need to delete twice for an item and etc.)
 2. Able to drag and drop the favourite items in the list.
-3. Able to click on a favourite item to check on the summary. 
-4. Think of more interactive ways for users to click and implement it. (Sliders? A Calendar to help users to mark?)
+3. Able to click on a favourite item to check on the summary.
+4. Make use of more React Router logics. (Most of the components still need to refresh or refetched.)
+5. Think of more interactive ways for users to click and implement it. (Sliders? A Calendar to help users to mark?)
 
 # Q&A
 
