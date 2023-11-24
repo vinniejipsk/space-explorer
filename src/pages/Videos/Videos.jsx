@@ -4,7 +4,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import VideoItem from '../../components/VideoItem/VideoItem';
 
 import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
-import myVideo from '../../assets/background_video/earth.mp4';
+import myBgVideo from '../../assets/background_video/earth.mp4';
 
 import './Videos.css';
 
@@ -51,7 +51,7 @@ function Videos() {
 
   return (
       <>
-        <BackgroundVideo src={myVideo} />
+        <BackgroundVideo src={myBgVideo} />
         <Navigation />
         {selectedVideo && (
           <video 
@@ -61,14 +61,15 @@ function Videos() {
             controls 
             autoPlay 
             muted
+            className='video-player'
           >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}
-        <div className="sort-buttons">
-          <button onClick={() => setSortMethod('new')}>Recent</button>
-          <button onClick={() => setSortMethod('old')}>Oldest</button>
+        <div className="sort-video-btns-container">
+          <button onClick={() => setSortMethod('new')} className="sort-video-btn">Recent</button>
+          <button onClick={() => setSortMethod('old')} className="sort-video-btn">Oldest</button>
         </div>
         <div className="videos-container">
         {sortVideos(videos, sortMethod).map((video, index) => (

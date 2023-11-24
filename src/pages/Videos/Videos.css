@@ -4,21 +4,42 @@
   gap: 5px;
   }
   
+.video-item {
+  flex: 0 0 0%;
+  max-width: 25%;
+  cursor: pointer;
+}
+
+.video-player {
+  margin-block: 10px;
+}
+
+.sort-video-btns-container {
+  margin: 5px;
+  text-align: left; 
+}
+
+.sort-video-btn {
+  padding-inline: 10px;
+  padding-block: 5px;
+  margin: 2.5px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: rgb(98, 98, 98, 0.75);
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
   .video-item {
-    flex: 0 0 0%;
-    max-width: 25%;
+    flex: 0 0 25%; 
+    max-width: 50%;
   }
+}
 
-  @media (max-width: 1300px) {
-    .video-item {
-      flex: 0 0 25%; /* 50% for 2 columns */
-      max-width: 50%;
-    }
+@media (max-width: 767px) {
+  .video-item {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-
-  @media (max-width: 767px) {
-    .video-item {
-      flex: 0 0 100%; /* 100% for 1 column */
-      max-width: 100%;
-    }
-  }
+}

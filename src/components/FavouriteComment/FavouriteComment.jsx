@@ -1,8 +1,9 @@
 function FavouriteComment({ setComment }) {
     return (
-      <input
-        placeholder="Type your comments here!"
+      <textarea
+        placeholder="Comment here!"
         onChange={(e) => setComment(e.target.value)}
+        className="comment-box"
       />
     );
   }
