@@ -7,9 +7,6 @@ import FavouritesList from '../../components/FavouritesList/FavouritesList';
 import ResultSummary from '../../components/ResultSummary/ResultSummary';
 import FavouriteComment from '../../components/FavouriteComment/FavouriteComment';
 
-import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
-import myBgVideo from '../../assets/background_video/earth.mp4';
-
 import './Home.css';
 
 function Home() {
@@ -103,7 +100,6 @@ function Home() {
   return (
     
     <div className="main-container">
-      <BackgroundVideo src={myBgVideo} />
       <div className="navigation-container">
         <Navigation />
       </div>

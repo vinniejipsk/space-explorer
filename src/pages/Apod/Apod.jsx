@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 
 import Navigation from '../../components/Navigation/Navigation'
 
-import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
-import myBgVideo from '../../assets/background_video/earth.mp4';
-
 import './Apod.css'
 
 function Apod() {
@@ -27,7 +24,6 @@ function Apod() {
 
       return (
         <>
-            <BackgroundVideo src={myBgVideo} />
             <Navigation />
             {apodData && (
                 <div className="apod-container">
