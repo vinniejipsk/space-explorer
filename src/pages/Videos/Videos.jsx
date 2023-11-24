@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import Navigation from '../../components/Navigation/Navigation';
 import VideoItem from '../../components/VideoItem/VideoItem';
 
+import BackgroundVideo from '../../components/BackgroundVideo/BackgroundVideo';
+import myVideo from '../../assets/background_video/earth.mp4';
+
 import './Videos.css';
 
 function Videos() {
@@ -48,6 +51,7 @@ function Videos() {
 
   return (
       <>
+        <BackgroundVideo src={myVideo} />
         <Navigation />
         {selectedVideo && (
           <video 
